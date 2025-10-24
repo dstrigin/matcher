@@ -27,8 +27,8 @@ const (
 type User struct {
 	UserID     domain.UserID
 	UserNumber uint64
-	Password   string
 	Email      string
+	Password   string
 	Telegram   string
 	Profile    Profile
 	Score      float64
