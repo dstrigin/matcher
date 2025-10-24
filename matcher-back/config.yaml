@@ -1,0 +1,17 @@
+http:
+  host: "0.0.0.0"
+  port: 8080
+
+db:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "password"
+  name: "mydb"
+  sslmode: "disable"
+
+jwt:
+  public_key_access: ""
+  private_key_access: ""
+  ttl_access: 1h
+  ttl_session: 24h

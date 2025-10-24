@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/dstrigin/matcher/matcher-back/internal/app"
+	"github.com/dstrigin/matcher/matcher-back/internal/config"
 	"github.com/gorilla/mux"
 	"go.uber.org/zap"
 )
@@ -13,6 +14,11 @@ func main() {
 	ctx := context.Background()
 
 	logger, err := zap.NewProduction()
+
+	_, err = config.LoadConfig("config.yaml")
+	if err != nil {
+		log.Fatalf("не удалось загрузить конфигурацию: %v", err)
+	}
 
 	router := mux.NewRouter()
 
