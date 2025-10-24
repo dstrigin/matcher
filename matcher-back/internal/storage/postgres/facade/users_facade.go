@@ -3,7 +3,7 @@ package facade
 import (
 	"context"
 
-	"github.com/dstrigin/matcher/matcher-back/internal/models"
+	"github.com/dstrigin/matcher/matcher-back/internal/domain/models"
 )
 
 type UsersFacade interface {
