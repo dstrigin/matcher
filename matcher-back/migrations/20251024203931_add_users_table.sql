@@ -1,9 +1,22 @@
 -- +goose Up
 -- +goose StatementBegin
-SELECT 'up SQL query';
+CREATE TABLE users(
+    id UUID PRIMARY KEY,
+    number SERIAL,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL,
+    telegram TEXT NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    picture_url TEXT NOT NULL,
+    gender SMALLINT NOT NULL,
+    age SMALLINT NOT NULL,
+    about TEXT NOT NULL,
+    score float,
+);
 -- +goose StatementEnd
 
 -- +goose Down
 -- +goose StatementBegin
-SELECT 'down SQL query';
+DROP TABLE users;
 -- +goose StatementEnd
