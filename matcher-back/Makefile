@@ -1,3 +1,4 @@
+MIGRATION_FOLDER=$(CURDIR)/migrations
 
 .PHONY: build
 ## build app in docker
