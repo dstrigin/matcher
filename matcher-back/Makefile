@@ -5,6 +5,11 @@ MIGRATION_FOLDER=$(CURDIR)/migrations
 build:
 	docker build -t users .
 
+.PHONY: run
+## run app in docker
+run:
+	docker run --rm -it users
+
 .PHONY: update
 ## updates dependencies
 update:

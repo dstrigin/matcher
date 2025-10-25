@@ -1,8 +1,8 @@
-FROM golang:1.24.6-alpine as builder
+FROM golang:1.25-alpine as builder
 
-WORKDIR /app
+WORKDIR /
 
-ADD . .
+COPY . .
 
 RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=cache,target="/root/.cache/go-build" \
@@ -12,6 +12,7 @@ FROM alpine:latest
 
 WORKDIR /app
 
-COPY --from=builder /app/users .
+COPY --from=builder /bin/users .
+COPY --from=builder /config.yaml .
 
 CMD ["./users"]

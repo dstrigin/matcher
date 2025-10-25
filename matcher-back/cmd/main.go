@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
 	"context"
@@ -15,9 +15,9 @@ func main() {
 
 	logger, err := zap.NewProduction()
 
-	_, err = config.LoadConfig("config.yaml")
+	_, err = config.LoadConfig("./config.yaml")
 	if err != nil {
-		log.Fatalf("не удалось загрузить конфигурацию: %v", err)
+		log.Fatalf("config error: %v", err)
 	}
 
 	router := mux.NewRouter()
